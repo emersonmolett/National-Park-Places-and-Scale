@@ -19,3 +19,57 @@ p {
   padding: 3rem 1.5rem;
   text-align: center;
 }
+/*set margin and padding on body*/
+body {
+  padding: 10;
+  margin: 10;
+}
+
+/* set map, body, and html to a percent of the screen size*/
+
+body,
+html {
+  height: 80%;
+  width: 80%;
+}
+#map{
+  height: 600px;
+  width: 80%;
+}
+
+/* set font options*/
+
+body {
+  font-family: "Avenir", "Verdana", "Trebuchet MS", "Tahoma", sans-serif;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  vertical-align: top;
+  font: 20px;
+  letter-spacing: 1.5px;
+  text-shadow: 3px 3px 10px gray;
+}
+
+h2 {
+  text-align: left;
+  font: 17px;
+}
+
+h3 {
+  text-align: left;
+  font: 14px;
+}
+
+h4 {
+  text-align: left;
+  font: 11px;
+}
+
+p {
+  text-align: left;
+  font: 9px;
+  word-spacing: .5px;
+}
+
