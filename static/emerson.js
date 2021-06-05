@@ -68,28 +68,34 @@ function drawGaugeChart(att_2020) {
     {
       domain: { x: [0, 1], y: [0, 1] },
       value: att_2020,
-      title: { text: "2020 Attendance" },
+      title: { text: "Recreation Visits 2020" },
       type: "indicator",
       mode: "gauge+number",
       gauge: {
-        axis: { range: [0, 9], tickwidth: 1, tickmode: "linear", tickcolor: "darkblue" },
-        bar: { color: "#1f77b4" },
+        axis: { range: [0, 15000000], tickwidth: 1, tickmode: "array", tickcolor: "darkblue" },
+        bar: { color: "#c1121f" },
         bgcolor: "white",
         borderwidth: 2,
         bordercolor: "gray",
         steps: [
-          { range: [0, 1500000], color: "#f8f3ec" },
-          { range: [15000001, 2500000], color: "#f4f1e5" },
-          { range: [2500001, 4000000], color: "#e9e6ca" },
-          { range: [40000001, 55000000], color: "#e5e7b3" },
-          { range: [55000001, 7000000], color: "#d5e49d" },
-          { range: [7000001, 85000000], color: "#b7cc92" },
-          { range: [85000001, 1000000], color: "#8cbf88" },
-          { range: [100000001, 11500000], color: "#8abb8f" },
-          { range: [8, 9], color: "#85b48a" }
+          { range: [0, 1000000], color: "#f2faeb" },
+          { range: [1000001, 2000000], color: "#d3eebc" },
+          { range: [2000001, 3000000], color: "#b5e28d" },
+          { range: [3000001, 4000000], color: "#8cd34e" },
+          { range: [4000001, 5000000], color: "#78c832" },
+          { range: [5000001, 6000000], color: "#6eb82e" },
+          { range: [6000001, 7000000], color: "#65a82a" },
+          { range: [7000001, 8000000], color: "#5c9926" },
+          { range: [8000001, 9000000], color: "#528922" },
+          { range: [9000001, 10000000], color: "#49791e" },
+          { range: [10000001, 11000000], color: "#3f6a1a" },
+          { range: [11000001, 12000000], color: "#365a16" },
+          { range: [12000001, 13000000], color: "#2c4a13" },
+          { range: [13000001, 14000000], color: "#233a0f" },
+          { range: [14000001, 15000000], color: "#1a2b0b" },
         ],
         threshold: {
-          line: { color: "#d77270", width: 4 },
+          line: { color: "#d00000", width: 4 },
           thickness: 0.5,
           value: att_2020
         }
@@ -99,11 +105,11 @@ function drawGaugeChart(att_2020) {
 
   // Define gauge chart layout
   var gaugeLayout = {
+    title: "Recreation Visits 2020",
     width: window.innerWidth / 1.4,
-    // height:  500,
+    height:  400,
     margin: { t: 0, r: 0, l: 0, b: 0 },
   };
-
   // Make plot responsive within Bootstrap container
   var config = { responsive: true }
 
