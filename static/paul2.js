@@ -508,7 +508,7 @@ d3.json("/natparks").then(function (NPSData) {
 
 						// This loops through POI data and creates one marker for each place,
 						// then binds a popup containing that place's info and adds it to a layer:
-						// console.log(`Starting to loop through ${POIlength} points of camping interest and turn them into markers...`);
+						
 
 						for (var i = 0; i < POIlength; i++) {
 							var POI = POIdata[i];
@@ -538,15 +538,10 @@ d3.json("/natparks").then(function (NPSData) {
 							POImarkers.push(POImarker);
 						};
 
-						// console.log(`...${POIlength} points of interest bound to POI markers and placed in camping layer. Here's one at random:`);
-						// console.log(POImarkers[Math.floor(Math.round(Math.random() * POIlength)) + 1]);
-
 						// This turns the array called POImarkers into a Leaflet layer group:
 						var Camping = L.layerGroup(POImarkers);
 
-						// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
 						//------- end of camping POI loop -------------
-
 
 						//------- start of emergency POI loop -------------
 						var POIdataEmergency = "";
@@ -566,8 +561,7 @@ d3.json("/natparks").then(function (NPSData) {
 
 							// This loops through POI data and creates one marker for each place,
 							// then binds a popup containing that place's info and adds it to a layer:
-							// console.log(`Starting to loop through ${POIlength} emergency-related points of interest and turn them into markers...`);
-
+				
 							for (var i = 0; i < POIlength; i++) {
 								var POI = POIdata[i];
 
@@ -596,13 +590,11 @@ d3.json("/natparks").then(function (NPSData) {
 								POImarkers.push(POImarker);
 							};
 
-							// console.log(`...${POIlength} points of interest bound to POI markers and placed in emergency layer. Here's one at random:`);
-							// console.log(POImarkers[Math.floor(Math.round(Math.random() * POIlength)) + 1]);
-
+			
 							// This turns the array called POImarkers into a Leaflet layer group:
 							var Emergency = L.layerGroup(POImarkers);
 
-							// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
+					
 							//------- end of emergency POI loop -------------
 
 
@@ -624,8 +616,7 @@ d3.json("/natparks").then(function (NPSData) {
 
 								// This loops through POI data and creates one marker for each place,
 								// then binds a popup containing that place's info and adds it to a layer:
-								// console.log(`Starting to loop through ${POIlength} points of transportation interest and turn them into markers...`);
-
+								
 								for (var i = 0; i < POIlength; i++) {
 									var POI = POIdata[i];
 
@@ -655,13 +646,12 @@ d3.json("/natparks").then(function (NPSData) {
 									POImarkers.push(POImarker);
 								};
 
-								// console.log(`...${POIlength} points of interest bound to POI markers and placed in transportation layer. Here's one at random:`);
-								// console.log(POImarkers[Math.floor(Math.round(Math.random() * POIlength)) + 1]);
+						
 
 								// This turns the array called POImarkers into a Leaflet layer group:
 								var Transportation = L.layerGroup(POImarkers);
 
-								// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
+							
 								//------- end of transportation POI loop -------------
 
 
@@ -684,7 +674,7 @@ d3.json("/natparks").then(function (NPSData) {
 
 									// This loops through POI data and creates one marker for each place,
 									// then binds a popup containing that place's info and adds it to a layer:
-									// console.log(`Starting to loop through ${POIlength} points of athletic interest and turn them into markers...`);
+									
 
 									for (var i = 0; i < POIlength; i++) {
 										var POI = POIdata[i];
@@ -715,16 +705,13 @@ d3.json("/natparks").then(function (NPSData) {
 										POImarkers.push(POImarker);
 									};
 
-									// console.log(`...${POIlength} points of interest bound to POI markers and placed in transportation layer. Here's one at random:`);
-									// console.log(POImarkers[Math.floor(Math.round(Math.random() * POIlength)) + 1]);
+									
 
 									// This turns the array called POImarkers into a Leaflet layer group:
 									var Sports = L.layerGroup(POImarkers);
 
-									// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
+									
 									//------- end of sports POI loop -------------
-
-
 
 									// 4. This creates the tile layer:
 									L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -738,12 +725,6 @@ d3.json("/natparks").then(function (NPSData) {
 										accessToken: API_KEY
 									}).addTo(myMap);
 
-									// // console.log("Added a tile layer, read in the API key, and set the map view.");
-
-
-
-
-
 									// 6. This lists overlay(s) for Layers Control:
 									var overlays = {
 										"amenities": Amenities,
@@ -755,11 +736,7 @@ d3.json("/natparks").then(function (NPSData) {
 										"history": Historical,
 										"transportation": Transportation
 									};
-									// console.log("Here's what's in overlays:");
-									// console.log(overlays);
-
-
-
+								
 									// 7. This creates a Layers Control:
 									L.control.layers(baseMaps, overlays).addTo(myMap);
 								});
@@ -767,7 +744,7 @@ d3.json("/natparks").then(function (NPSData) {
 
 
 								// 8. This draws useful enhancements on the map:
-								// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
+								
 
 								// This draws a line around the world along the 45th parallel north...
 								var parallel = [
@@ -832,10 +809,7 @@ d3.json("/natparks").then(function (NPSData) {
 									weight: "0.75"
 								}).addTo(myMap);
 
-								// // console.log("Drew a blue line around the world at the equator and red lines around the world at the 45th parallels north and south");
-								// // console.log("-_-_-_-_-_-_-_-_-_-_-_-");
-
-
+	
 
 								// IIE. PICK COLORS AND PLOT CIRCLES ON THE MAP
 								// Color is the color of the *boundary* of the concentric circle.
@@ -848,14 +822,13 @@ d3.json("/natparks").then(function (NPSData) {
 								// we'll want to test and determine different optimal opacities for each view
 								// and set them here:
 								var opacity = 0.05;
-								// console.log(`color: ${Color}, fillColor: ${fillColor}, opacity: ${opacity}`);
+							
 
 								// ...but if someone wants to see a circle with a radius of a mile or more,
 								// draw concentric circles:
 								if (diameter > 0) {
 
-									// console.log(`Started running a loop to draw concentric circles out to ${miles} miles around the center point.s`);
-
+									
 									for (radius = 0 + radiusIncrements; radius <= miles;) {
 
 										// Create a circle and give it attributes
@@ -865,26 +838,20 @@ d3.json("/natparks").then(function (NPSData) {
 											fillOpacity: opacity,
 											radius: radius * 1609.34
 										}).addTo(myMap);
-										// // console.log(`Drew concentric circle ${Math.round((radius * 2) * 10 ) / 10} miles across.`);
-
-										// // console.log(`color: ${Color} opacity: ${opacity}`);
+								
 										radius = radius + radiusIncrements;
 									};
 									// console.log(`Finished running the concentric circles loop.`);
 								};
 
-								// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
-
-
-
-
+							
 								// IIIB. BIND MARKERS TO MAP FOR EACH NPS UNIT ("PARK")
 
 								// NPSplaceCount stores how many records there are in our dataset of NPS units:
 
 								// This loops through the array called places and creates one marker for each place,
 								// then binds a popup containing that place's info and adds it to the map.
-								// console.log(`Started binding popups to markers and placing them on the map for each NPS unit...`);
+								
 								for (var i = 0; i < NPSplaceCount; i++) {
 									var unit = NPSData[i];
 
@@ -904,7 +871,7 @@ d3.json("/natparks").then(function (NPSData) {
 										unitAcres = `${Math.round(unit.acres)} acres`;
 									};
 
-									// // console.log(unit);
+									
 									if (unit.att_average > 0) {
 										unitVisitors = `${unit.att_average} recreation visits each year`;
 										unitVisitorsPerAcre = `${Math.round(unit.att_average / unit.acres)} recreation visits per acre each year`;
@@ -932,11 +899,10 @@ d3.json("/natparks").then(function (NPSData) {
 									})
 										.bindPopup("<h4>" + unitName + "</h4>" + "<p>" + unitVisitors + "<br>" + unitAcres + "<br>" + unitVisitorsPerAcre + "</p>")
 										.addTo(myMap);
-									// // console.log(`marked ${i+1}`);
+									
 								};
 
-								// console.log(`...popups bound to markers and placed on map for each NPS unit.`);
-								// console.log("-_-_-_-_-_-_-_-_-_-_-_-");
+								
 
 
 							});
