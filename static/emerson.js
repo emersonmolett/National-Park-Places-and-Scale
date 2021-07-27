@@ -124,6 +124,7 @@ function optionChanged(parkID) {
 
 function initDashboard() {
   var dropdown = d3.select("#selDataset")
+  console.log("Here I am")
   d3.json("/natparks").then((data) => {
     // var parksInfo = data.names;
     data.forEach((parkInfo) => {
