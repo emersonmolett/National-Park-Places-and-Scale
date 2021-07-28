@@ -21,12 +21,15 @@
     National Park Explorer
   </h1>
 </div>
-
+<select id="selDataset" onchange="optionChanged(this.value)">
+  <!-- <option value="940">940</option> -->
+  <!-- <option value="941">941</option> -->
+</select>
 <!-- the div where the map goes-->
-<div id="map">
-  <h2></h2>
+<div class="mapwrapper">
+  <div id="map">
+  </div>
 </div>
-
 <!-- the div where the name of the place the map starts on goes-->
 <div id="label">
   <h3></h3>
@@ -103,8 +106,8 @@
 <script type="text/javascript" src="{{url_for('static', filename='js/config.js')}}"></script>
 
 <!-- JS -->
-<script type="text/javascript" src="{{url_for('static', filename='js/emerson.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/paul2.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/emerson.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/redraw.js')}}"></script>
 
 {% endblock %}

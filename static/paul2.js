@@ -841,7 +841,7 @@ d3.json("/natparks").then(function (NPSData) {
 								
 										radius = radius + radiusIncrements;
 									};
-									// console.log(`Finished running the concentric circles loop.`);
+							
 								};
 
 							

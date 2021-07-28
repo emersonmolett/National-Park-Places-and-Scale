@@ -120,16 +120,19 @@ function drawGaugeChart(att_2020) {
 function optionChanged(parkID) {
   // console.log(parkInfo);
   buildCharts(parkID);
+  buildMap(parkID)
 }
 
 function initDashboard() {
   var dropdown = d3.select("#selDataset")
   d3.json("/natparks").then((data) => {
     // var parksInfo = data.names;
-    data.forEach((parkInfo) => {
-      dropdown.append("option").text(parkInfo.name).property("value", parkInfo[""])
+    data.forEach((parkInfo, index) => {
+      dropdown.append("option").text(parkInfo.name).property("value", index)
+      
     });
-    buildCharts("0")
+    buildCharts(0)
+    buildMap(0) 
   });
 }
 initDashboard();
