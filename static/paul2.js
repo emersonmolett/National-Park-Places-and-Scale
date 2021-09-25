@@ -884,11 +884,11 @@ function createParkMap(NPSplaceRandomLatLong) {
 										// https://leafletjs.com/examples/custom-icons/
 										// https://handsondataviz.org/leaflet-maps-with-csv.html
 										var NPSunitIcon = L.icon({
-											iconUrl: "./static/markers/NPS-arrowhead-2tone.png",
+											iconUrl: "https://github.com/emersonmolett/National-Park-Places-and-Scale-fork-/blob/main/static/markers/NPS-arrowhead-2tone.png?raw=true",
 											iconSize: [38, 40],
 											iconAnchor: [20, 38],
 											popupAnchor: [0, -40],
-											shadowUrl: "./static/markers/NPS-arrowhead-shadow.png",
+											shadowUrl: "https://github.com/emersonmolett/National-Park-Places-and-Scale-fork-/blob/main/static/markers/NPS-arrowhead-shadow.png?raw=true",
 											shadowSize: [45, 40],
 											shadowAnchor: [20, 38]
 										});
