@@ -3,10 +3,11 @@ console.log("emerson.js loaded");
 function buildCharts(parkID) {
   // d3.csv("../resources/natParksFinal.csv").then((data) => {
   d3.json("/natparks").then((data) => {
-    parkInfo = data[parkID]
+    var parkInfo = data.filter(park => park.name == parkID)[0]
+    console.log(parkInfo)
+    createParkMap([parkInfo.latitude, parkInfo.longitude])
     var att_2020 = parkInfo.att_2020;
-    console.log(parkInfo);
-    console.log(att_2020);
+    console.log(att_2020)
     var xvalues = [parkInfo["att_2011"], parkInfo["att_2012"], parkInfo["att_2013"], parkInfo["att_2014"], parkInfo["att_2015"], parkInfo["att_2016"], parkInfo["att_2017"], parkInfo["att_2018"], parkInfo["att_2019"], parkInfo["att_2020"]]
     var yvalues = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"]
     var data = [{
@@ -107,7 +108,7 @@ function drawGaugeChart(att_2020) {
   var gaugeLayout = {
     title: "Recreation Visits 2020",
     width: window.innerWidth / 1.4,
-    height:  400,
+    height: 400,
     margin: { t: 0, r: 0, l: 0, b: 0 },
   };
   // Make plot responsive within Bootstrap container
@@ -117,21 +118,24 @@ function drawGaugeChart(att_2020) {
   Plotly.newPlot("gauge", gaugeData, gaugeLayout, config);
 };
 
-function optionChanged(parkID) {
+function optionChanged(parkName) {
   // console.log(parkInfo);
-  buildCharts(parkID);
+  // buildCharts(parkID);
+  var link = `/dashboard/${parkName.split(" ").join("+")}`;
+  window.location.href = link;
+  window.location.replace(link);
 }
 
 function initDashboard() {
   var dropdown = d3.select("#selDataset")
-  console.log("Here I am")
   d3.json("/natparks").then((data) => {
     // var parksInfo = data.names;
     data.forEach((parkInfo) => {
-      dropdown.append("option").text(parkInfo.name).property("value", parkInfo[""])
+      dropdown.append("option").text(parkInfo.name).property("value", parkInfo.name)
     });
-    buildCharts("0")
+
   });
+  buildCharts(selectedParkName)
 }
 initDashboard();
 

@@ -47,9 +47,10 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 #Index Page Route
 @app.route("/")
-def index_route():
+@app.route("/dashboard/<park>")
+def index_route(park="Abraham+Lincoln+Birthplace+National+Historical+Park"):
     #This page returns the main page
-    webpage = render_template("index.html")
+    webpage = render_template("index.html",selected_park=park.replace("+"," "))
 
     return webpage
 
